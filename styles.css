@@ -500,9 +500,9 @@ a.social-link:hover { border-color: var(--brand-light); background: rgb(47 107 8
 @media (max-width: 680px) {
   .smoke-layer { position: absolute; height: 100svh; }
   .smoke-plume-wide { display: none; }
-  .smoke-plume { animation-duration: 18s; stroke-width: 120px; }
-  .smoke-plume path:nth-child(2) { stroke-width: 90px; }
-  .smoke-plume path:nth-child(3) { stroke-width: 65px; }
+  .smoke-plume { animation-duration: 18s; stroke-width: 54px; }
+  .smoke-plume path:nth-child(2) { stroke-width: 40px; }
+  .smoke-plume path:nth-child(3) { stroke-width: 29px; }
 
   .home-hero {
     min-height: auto;
