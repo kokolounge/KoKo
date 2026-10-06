@@ -22,6 +22,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
+  overflow-x: clip;
   background: radial-gradient(ellipse at 50% -18%, rgb(47 107 89 / 16%), transparent 48%), var(--page);
   color: var(--ink);
   font-family: "DM Sans", sans-serif;
@@ -50,7 +51,7 @@ a:focus-visible {
   position: fixed;
   z-index: -1;
   inset: 0;
-  width: 100vw;
+  width: auto;
   height: 100vh;
   height: 100svh;
   overflow: hidden;
