@@ -149,18 +149,17 @@ a:focus-visible {
 .hero-orbit {
   position: absolute;
   z-index: 1;
-  width: min(420px, 40vw);
+  width: min(390px, 38vw);
   aspect-ratio: 1;
-  border: 1px solid rgb(116 198 163 / 34%);
+  border: 1px solid rgb(116 198 163 / 24%);
   border-radius: 50%;
-  box-shadow: 0 0 0 10px rgb(116 198 163 / 4%), 0 0 0 11px rgb(116 198 163 / 20%);
 }
 
 .hero-orbit::before,
 .hero-orbit::after {
   position: absolute;
   content: "";
-  border: 1px solid rgb(116 198 163 / 16%);
+  border: 1px solid rgb(116 198 163 / 10%);
   border-radius: 50%;
   inset: 12px;
 }
@@ -177,9 +176,17 @@ a:focus-visible {
 }
 
 .eyebrow-mark {
-  width: 22px;
-  height: 1px;
+  width: 30px;
+  height: 2px;
   background: var(--brand-light);
+}
+
+.hero-copy .eyebrow::after {
+  width: 30px;
+  height: 2px;
+  flex: 0 0 auto;
+  background: var(--brand-light);
+  content: "";
 }
 
 .hero-logo {
@@ -500,7 +507,7 @@ a.social-link:hover { border-color: var(--brand-light); background: rgb(47 107 8
   }
 
   .hero-media { min-height: 250px; }
-  .hero-orbit { width: min(280px, 76vw); }
+  .hero-orbit { width: min(260px, 72vw); }
   .hero-logo { width: min(198px, 57vw); height: min(198px, 57vw); }
   .hero-copy { margin-inline: auto; }
   .hero-copy .eyebrow { justify-content: center; font-size: clamp(7px, 2.5vw, 9px); letter-spacing: .12em; }
