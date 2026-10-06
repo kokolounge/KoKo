@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261006-home-green-lines">
+  <link rel="stylesheet" href="styles.css?v=20261006-ios-smoke">
 </head>
 <body>
   <main class="page home-page">
@@ -22,11 +22,9 @@
           <stop offset="1" stop-color="#dce3de" stop-opacity="0" />
         </linearGradient>
         <filter id="smoke-warp" x="-35%" y="-25%" width="170%" height="150%" color-interpolation-filters="sRGB">
-          <feTurbulence type="fractalNoise" baseFrequency=".012 .025" numOctaves="2" seed="12" result="noise">
-            <animate attributeName="baseFrequency" values=".012 .025;.017 .03;.012 .025" dur="14s" repeatCount="indefinite" />
-          </feTurbulence>
-          <feDisplacementMap in="SourceGraphic" in2="noise" scale="34" xChannelSelector="R" yChannelSelector="G" />
-          <feGaussianBlur stdDeviation="5" />
+          <feTurbulence type="fractalNoise" baseFrequency=".012 .025" numOctaves="1" seed="12" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="24" xChannelSelector="R" yChannelSelector="G" />
+          <feGaussianBlur stdDeviation="4" />
         </filter>
       </defs>
       <g class="smoke-plume smoke-plume-one" filter="url(#smoke-warp)">
