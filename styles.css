@@ -13,15 +13,16 @@
 * { box-sizing: border-box; }
 
 html {
-  min-width: 320px;
+  min-width: 0;
   scroll-behavior: smooth;
+  overflow-x: clip;
   background: var(--page);
 }
 
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--page);
+  background: radial-gradient(ellipse at 50% -18%, rgb(47 107 89 / 16%), transparent 48%), var(--page);
   color: var(--ink);
   font-family: "DM Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -524,4 +525,130 @@ a.social-link:hover { border-color: var(--brand-light); background: rgb(47 107 8
   *, *::before, *::after { transition-duration: .01ms !important; }
   .smoke-layer,
   .smoke-plume { animation: none; opacity: .2; }
+}
+
+/* Navegación y movimiento sutil compartidos por todas las páginas. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: page-leave .16s ease-in both;
+}
+
+::view-transition-new(root) {
+  animation: page-arrive .34s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+@keyframes page-leave {
+  to { opacity: 0; transform: translateY(-5px); }
+}
+
+@keyframes page-arrive {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; translate: 0 12px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+.topbar {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  background: rgb(0 0 0 / 76%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.back-link {
+  padding: 9px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.back-link:hover {
+  transform: translateX(-2px);
+  border-color: rgb(116 198 163 / 26%);
+  background: rgb(47 107 89 / 16%);
+}
+
+.menu-hero,
+.home-hero .hero-media,
+.home-hero .hero-copy {
+  animation: reveal-up .7s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.home-hero .hero-copy { animation-delay: .12s; }
+
+.hero-logo {
+  animation: logo-drift 8s ease-in-out .5s infinite;
+}
+
+@keyframes logo-drift {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -5px; }
+}
+
+.category-label { animation: reveal-up .45s ease both; }
+
+.category-button {
+  animation: reveal-up .55s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.category-button:nth-child(2) { animation-delay: .04s; }
+.category-button:nth-child(3) { animation-delay: .08s; }
+.category-button:nth-child(4) { animation-delay: .12s; }
+.category-button:nth-child(5) { animation-delay: .16s; }
+.category-button:nth-child(6) { animation-delay: .20s; }
+.category-button:nth-child(7) { animation-delay: .24s; }
+.category-button:nth-child(8) { animation-delay: .28s; }
+.category-button:nth-child(9) { animation-delay: .32s; }
+.category-button:nth-child(10) { animation-delay: .36s; }
+.category-button:nth-child(11) { animation-delay: .40s; }
+.category-button:nth-child(12) { animation-delay: .44s; }
+
+.product-group {
+  animation: reveal-up .5s cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.product-group:nth-child(2) { animation-delay: .08s; }
+.product-group:nth-child(3) { animation-delay: .16s; }
+
+.product {
+  animation: reveal-up .42s ease both;
+}
+
+.product:nth-child(2) { animation-delay: .03s; }
+.product:nth-child(3) { animation-delay: .06s; }
+.product:nth-child(4) { animation-delay: .09s; }
+.product:nth-child(5) { animation-delay: .12s; }
+.product:nth-child(6) { animation-delay: .15s; }
+.product:nth-child(7) { animation-delay: .18s; }
+.product:nth-child(8) { animation-delay: .21s; }
+.product:nth-child(9) { animation-delay: .24s; }
+
+.social-link {
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+
+.social-link:hover { transform: translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  .menu-hero,
+  .home-hero .hero-media,
+  .home-hero .hero-copy,
+  .hero-logo,
+  .category-label,
+  .category-button,
+  .product-group,
+  .product { animation: none !important; }
+
+  .back-link:hover,
+  .social-link:hover { transform: none; }
 }
