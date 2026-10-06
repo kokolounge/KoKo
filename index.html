@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Koko Lounge en Torre del Mar. Consulta nuestra carta.">
+  <title>Koko Lounge · Torre del Mar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page home-page">
+    <svg class="smoke-layer" viewBox="0 0 1000 1100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="smoke-fade" x1="0" y1="1" x2=".7" y2="0">
+          <stop offset="0" stop-color="#c5d0c9" stop-opacity=".02" />
+          <stop offset=".35" stop-color="#e0e5e1" stop-opacity=".44" />
+          <stop offset=".72" stop-color="#b8c8bf" stop-opacity=".3" />
+          <stop offset="1" stop-color="#dce3de" stop-opacity="0" />
+        </linearGradient>
+        <filter id="smoke-warp" x="-35%" y="-25%" width="170%" height="150%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency=".012 .025" numOctaves="2" seed="12" result="noise">
+            <animate attributeName="baseFrequency" values=".012 .025;.017 .03;.012 .025" dur="14s" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="34" xChannelSelector="R" yChannelSelector="G" />
+          <feGaussianBlur stdDeviation="5" />
+        </filter>
+      </defs>
+      <g class="smoke-plume smoke-plume-one" filter="url(#smoke-warp)">
+        <path d="M235 610 C150 545 345 510 270 435 C205 370 355 338 375 270 C397 202 320 185 380 128 C423 87 450 63 430 20" />
+        <path d="M260 630 C380 560 170 510 300 438 C420 372 455 335 404 284 C350 229 430 199 515 159 C565 136 566 91 548 54" />
+        <path d="M225 620 C130 562 185 510 184 455 C183 397 265 377 252 321 C240 271 207 243 264 196 C302 165 316 120 292 89" />
+      </g>
+      <g class="smoke-plume smoke-plume-two" filter="url(#smoke-warp)">
+        <path d="M255 630 C330 552 205 498 334 432 C472 362 500 316 454 270 C406 222 486 190 580 156 C642 134 672 91 648 42" />
+        <path d="M270 620 C185 565 370 514 318 456 C268 400 407 372 443 319 C477 269 423 238 490 205 C537 183 560 144 548 104" />
+        <path d="M235 640 C142 582 236 531 220 486 C201 431 267 405 296 367 C332 319 280 282 333 240 C370 210 383 174 360 139" />
+      </g>
+      <g class="smoke-plume smoke-plume-wide" filter="url(#smoke-warp)">
+        <path d="M55 1080 C185 932 22 842 130 724 C222 622 56 547 148 447 C217 371 91 297 170 218 C220 166 192 96 130 18" />
+        <path d="M785 1080 C650 940 919 839 804 719 C704 616 918 543 830 437 C761 355 908 287 831 203 C783 150 818 82 891 17" />
+        <path d="M520 1100 C670 964 419 872 561 753 C690 646 495 579 596 466 C674 379 539 301 623 223 C682 170 651 94 706 24" />
+      </g>
+    </svg>
+    <header class="topbar"><a class="brand" href="index.html" aria-label="Koko Lounge, inicio"><span class="brand-name">KOKO<span> LOUNGE</span></span></a><span class="location">TORRE DEL MAR</span></header>
+    <section class="hero home-hero" aria-labelledby="title">
+      <div class="hero-media">
+        <span class="hero-orbit" aria-hidden="true"></span>
+        <img class="hero-logo" src="kokologo-circle.png" alt="Logo de Koko Lounge">
+        <p class="image-caption">KOKO LOUNGE <span>·</span> TORRE DEL MAR</p>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> LOUNGE · TORRE DEL MAR</p>
+        <h1 class="home-title" id="title">Disfruta<br>el momento<span>.</span></h1>
+        <p class="intro">Tu sitio para desconectar.</p>
+        <a class="main-button" href="menu.html">Explorar la carta <span aria-hidden="true">→</span></a>
+        <p class="hero-note">UNA EXPERIENCIA KOKO</p>
+      </div>
+    </section>
+    <footer class="home-footer">
+      <p class="footer-copy">Síguenos y escríbenos</p>
+      <nav class="socials" aria-label="Redes sociales">
+        <a class="social-link" href="https://www.instagram.com/kokolounge_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Koko Lounge">Instagram <span aria-hidden="true">↗</span></a>
+        <a class="social-link" href="https://wa.me/34695865423?text=Hola%2C%20quiero%20hacer%20una%20reserva%20en%20Koko%20Lounge." target="_blank" rel="noopener noreferrer" aria-label="Reservar por WhatsApp">WhatsApp <span aria-hidden="true">↗</span></a>
+      </nav>
+      <p class="copyright">KOKO LOUNGE · TORRE DEL MAR</p>
+    </footer>
+  </main>
+</body>
+</html>
