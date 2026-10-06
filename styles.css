@@ -515,7 +515,7 @@ a.social-link:hover { border-color: var(--brand-light); background: rgb(47 107 8
   .hero-logo { width: min(198px, 57vw); height: min(198px, 57vw); }
   .image-caption { bottom: 0; }
   .hero-copy { margin-inline: auto; }
-  .hero-copy .eyebrow { justify-content: center; font-size: 9px; }
+  .hero-copy .eyebrow { justify-content: center; font-size: clamp(7px, 2.5vw, 9px); letter-spacing: .12em; }
   .home-title { margin: 17px 0 13px; font-size: clamp(42px, 11vw, 60px); }
   .hero-copy .main-button { margin-top: 26px; }
   .hero-note { max-width: 260px; margin: 23px auto 0; }
